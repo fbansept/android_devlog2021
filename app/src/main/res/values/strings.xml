@@ -1,3 +1,22 @@
 <resources>
+    <string name="url_spring">http://10.0.2.2:8080/</string>
     <string name="app_name">Devlog2021</string>
+    <string name="title_activity_login_test">LoginTestActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="pseudo">Pseudo …</string>
+    <string name="password">Password …</string>
+    <string name="connexion">Connexion</string>
+    <string name="title_activity_liste_note">ListeNoteActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>
