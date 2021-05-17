@@ -1,15 +1,24 @@
 package edu.fbansept.devlog2021.model;
 
-public class Note {
-    private String titre;
-    private String texte;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-    public Note() {
+public class Note {
+
+    private Integer id;
+    private String titre;
+
+    public Note(JSONObject jsonNote) throws JSONException {
+        id = jsonNote.getInt("id");
+        titre = jsonNote.getString("titre");
     }
 
-    public Note(String titre, String texte) {
-        this.titre = titre;
-        this.texte = texte;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitre() {
@@ -18,13 +27,5 @@ public class Note {
 
     public void setTitre(String titre) {
         this.titre = titre;
-    }
-
-    public String getTexte() {
-        return texte;
-    }
-
-    public void setTexte(String texte) {
-        this.texte = texte;
     }
 }
