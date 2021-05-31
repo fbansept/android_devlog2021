@@ -1,5 +1,5 @@
 <resources>
-    <string name="url_spring">http://10.0.2.2:8080/</string>
+    <string name="url_spring">http://10.0.2.2:8081/</string>
     <string name="app_name">Devlog2021</string>
     <string name="title_activity_login_test">LoginTestActivity</string>
     <string name="prompt_email">Email</string>

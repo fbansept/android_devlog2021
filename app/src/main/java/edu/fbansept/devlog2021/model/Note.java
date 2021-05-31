@@ -3,7 +3,9 @@ package edu.fbansept.devlog2021.model;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Note {
+import java.io.Serializable;
+
+public class Note implements Serializable {
 
     private Integer id;
     private String titre;

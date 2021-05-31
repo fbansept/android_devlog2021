@@ -27,7 +27,12 @@ public final class UtilisateurController {
         return instance;
     }
 
-    public void getInformationUtilisateurConnecte(Context context) {
+
+    public interface UtilisateurConnecteListener {
+        void onUtilisateurConnecteListener(Utilisateur utilisateur);
+    }
+
+    public void getInformationUtilisateurConnecte(Context context, UtilisateurConnecteListener listener) {
 
         JsonObjectRequestWithToken request = new JsonObjectRequestWithToken(
                 context,
@@ -37,7 +42,7 @@ public final class UtilisateurController {
                 jsonUtilisateur -> {
                     try {
                         Utilisateur utilisateur = new Utilisateur(jsonUtilisateur);
-                        System.out.println(utilisateur);
+                        listener.onUtilisateurConnecteListener(utilisateur);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
