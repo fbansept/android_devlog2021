@@ -38,12 +38,13 @@
   </androidx.core.widget.NestedScrollView>
 
   <com.google.android.material.bottomappbar.BottomAppBar
-      android:id="@+id/bottomAppBar2"
+      android:id="@+id/bottomAppBar_editionNoteTexte"
       style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_gravity="bottom"
-      app:fabAlignmentMode="end" />
+      app:fabAlignmentMode="end"
+      app:menu="@menu/menu_edition_note" />
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:id="@+id/fab_editionNoteTexte"
@@ -51,5 +52,5 @@
       android:layout_height="wrap_content"
       android:clickable="true"
       android:src="@drawable/ic_baseline_check_24"
-      app:layout_anchor="@id/bottomAppBar2" />
+      app:layout_anchor="@id/bottomAppBar_editionNoteTexte" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

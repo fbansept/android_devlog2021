@@ -12,6 +12,16 @@ public class NoteTexte extends Note{
         texte = jsonNoteTexte.getString("texte");
     }
 
+    public JSONObject toJson() throws JSONException {
+        JSONObject jsonNote = new JSONObject();
+
+        jsonNote.put("id", this.getId());
+        jsonNote.put("titre", this.getTitre());
+        jsonNote.put("texte", this.getTexte());
+
+        return jsonNote;
+    }
+
     public String getTexte() {
         return texte;
     }
