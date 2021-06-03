@@ -7,13 +7,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import edu.fbansept.devlog2021.R;
 import edu.fbansept.devlog2021.controller.UtilisateurController;
+import edu.fbansept.devlog2021.model.Note;
+import edu.fbansept.devlog2021.model.NoteTexte;
 import edu.fbansept.devlog2021.view.adapter.ListeNoteAdapter;
 
 public class ListeNoteActivity extends AppCompatActivity {
 
     private RecyclerView recyclerViewListeNote;
+    private FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,5 +46,18 @@ public class ListeNoteActivity extends AppCompatActivity {
                                         startActivity(intent);
                                     }));
                 });
+
+        floatingActionButton = findViewById(R.id.floatingActionButton_listeNote);
+
+        floatingActionButton.setOnClickListener(v -> {
+            Intent intent = new Intent(
+                    this,
+                    EditionNoteTexteActivity.class);
+
+            intent.putExtra("note", new NoteTexte());
+            startActivity(intent);
+        });
+
+
     }
 }

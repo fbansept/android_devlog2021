@@ -2,6 +2,7 @@ package edu.fbansept.devlog2021.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -45,16 +46,16 @@ public class EditionNoteTexteActivity extends AppCompatActivity {
         bottomAppBar.setOnMenuItemClickListener(menuItem -> {
 
             if(menuItem.getItemId() == R.id.menuItem_ajouterFichier) {
-                System.out.println("bouton ajout fichier cliqué");
+                Log.d("event","bouton ajout fichier cliqué");
                 return true;
             } else if(menuItem.getItemId() == R.id.menuItem_ajouterPhoto) {
-                System.out.println("bouton ajout photo cliqué");
+                Log.d("event","bouton ajout photo cliqué");
                 return true;
             } else if(menuItem.getItemId() == R.id.menuItem_ajouterPosition) {
-                System.out.println("bouton ajout position cliqué");
+                Log.d("event","bouton ajout position cliqué");
                 return true;
             } else if(menuItem.getItemId() == R.id.menuItem_supprimer) {
-                System.out.println("bouton supprimé cliqué");
+                Log.d("event","bouton supprimé cliqué");
                 return true;
             }
 

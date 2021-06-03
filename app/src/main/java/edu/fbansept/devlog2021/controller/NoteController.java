@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 
 import edu.fbansept.devlog2021.R;
 import edu.fbansept.devlog2021.model.NoteTexte;
+import edu.fbansept.devlog2021.utils.RequestManager;
 import edu.fbansept.devlog2021.utils.StringRequestWithToken;
 import edu.fbansept.devlog2021.view.LoginActivity;
 
@@ -43,7 +44,7 @@ public final class NoteController {
         StringRequestWithToken request = new StringRequestWithToken(
                 context,
                 Request.Method.POST,
-                context.getResources().getString(R.string.url_spring) + "/user/noteTexte",
+                context.getResources().getString(R.string.url_spring) + "user/noteTexte",
                 urlNote -> {
                     saveListener.onSave(urlNote);
                 },
@@ -56,6 +57,8 @@ public final class NoteController {
                  return jsonBody.toString().getBytes(StandardCharsets.UTF_8);
             }
         };
+
+        RequestManager.getInstance(context).addToRequestQueue(request);
 
     }
 

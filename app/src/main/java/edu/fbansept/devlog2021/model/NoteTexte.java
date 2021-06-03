@@ -7,6 +7,10 @@ public class NoteTexte extends Note{
 
     private String texte;
 
+    public NoteTexte() {
+        super();
+    }
+
     public NoteTexte(JSONObject jsonNoteTexte) throws JSONException {
         super(jsonNoteTexte);
         texte = jsonNoteTexte.getString("texte");

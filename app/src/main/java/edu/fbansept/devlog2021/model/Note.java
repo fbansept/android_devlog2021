@@ -10,6 +10,8 @@ public class Note implements Serializable {
     private Integer id;
     private String titre;
 
+    public Note() { }
+
     public Note(JSONObject jsonNote) throws JSONException {
         id = jsonNote.getInt("id");
         titre = jsonNote.getString("titre");
