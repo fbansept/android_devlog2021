@@ -3,11 +3,16 @@ package edu.fbansept.devlog2021.model;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Tache {
+import java.io.Serializable;
+
+public class Tache implements Serializable {
 
     private Integer id;
     private boolean termine;
     private String texte;
+
+    public Tache() {
+    }
 
     public Tache(JSONObject jsonObject) throws JSONException {
         id = jsonObject.getInt("id");

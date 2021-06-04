@@ -37,12 +37,14 @@ public class ListeNoteActivity extends AppCompatActivity {
                     recyclerViewListeNote.setAdapter(
                             new ListeNoteAdapter(
                                     utilisateur.getListeNote(),
-                                    note -> {
+                                    noteCliquee -> {
                                         Intent intent = new Intent(
                                                 this,
-                                                EditionNoteTexteActivity.class);
+                                                noteCliquee instanceof NoteTexte
+                                                    ? EditionNoteTexteActivity.class
+                                                    : EditionNoteListeActivity.class);
 
-                                        intent.putExtra("note", note);
+                                        intent.putExtra("note", noteCliquee);
                                         startActivity(intent);
                                     }));
                 });

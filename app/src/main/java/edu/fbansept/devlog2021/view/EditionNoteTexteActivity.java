@@ -1,6 +1,8 @@
 package edu.fbansept.devlog2021.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
@@ -75,7 +77,11 @@ public class EditionNoteTexteActivity extends AppCompatActivity {
                         this,
                         note,
                         urlNote -> {
-                            System.out.println("note sauvegardé");
+                            Intent intent = new Intent(
+                                    this,
+                                    ListeNoteActivity.class);
+
+                            startActivity(intent);
                         });
             } catch (JSONException e) {
                 Toast.makeText(this, "Erreur interne", Toast.LENGTH_LONG).show();

@@ -15,6 +15,7 @@
         <activity android:name=".view.EditionNoteTexteActivity" >
         </activity>
         <activity android:name=".view.ListeNoteActivity" />
+        <activity android:name=".view.EditionNoteListeActivity" />
         <activity android:name=".view.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

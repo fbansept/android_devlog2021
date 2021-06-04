@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable name="tache" type="edu.fbansept.devlog2021.model.Tache" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/checkBox_tacheTermine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@={tache.termine}"/>
+
+        <EditText
+            android:id="@+id/editText_texteTache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:text="@={tache.texte}"
+            android:hint="Nouvelle tache ..."
+            android:inputType="textMultiLine" />
+
+        <ImageButton
+            android:id="@+id/button_supprimerTache"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/ic_baseline_close_24" />
+    </LinearLayout>
+
+</layout>
