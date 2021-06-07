@@ -43,4 +43,13 @@ public class Tache implements Serializable {
     public void setTexte(String texte) {
         this.texte = texte;
     }
+
+    public JSONObject toJson() throws JSONException {
+        JSONObject tache = new JSONObject();
+        tache.put("id",id);
+        tache.put("texte",texte);
+        tache.put("termine",termine);
+    
+        return tache;
+    }
 }

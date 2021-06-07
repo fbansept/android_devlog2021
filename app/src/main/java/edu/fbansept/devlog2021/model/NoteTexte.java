@@ -33,4 +33,6 @@ public class NoteTexte extends Note{
     public void setTexte(String texte) {
         this.texte = texte;
     }
+
+
 }

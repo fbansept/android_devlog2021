@@ -7,6 +7,12 @@
     app:layout_anchor="@id/bottomAppBar"
     tools:context=".view.ListeNoteActivity">
 
+    <fragment
+        android:id="@+id/fragment"
+        android:name="edu.fbansept.devlog2021.view.fragment.HeaderFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 
-public class Note implements Serializable {
+public abstract class Note implements Serializable {
 
     private Integer id;
     private String titre;
@@ -32,4 +32,6 @@ public class Note implements Serializable {
     public void setTitre(String titre) {
         this.titre = titre;
     }
+
+    public abstract JSONObject toJson() throws JSONException;
 }

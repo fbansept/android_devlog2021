@@ -65,8 +65,21 @@ public class EditionNoteListeActivity extends AppCompatActivity {
 
             note.setTitre(editTextTitre.getText().toString());
 
+            try {
+                NoteController.getInstance().save(
+                        this,
+                        note,
+                        urlNote -> {
+                            Intent intent = new Intent(
+                                    this,
+                                    ListeNoteActivity.class);
+
+                            startActivity(intent);
+                        });
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
         });
-
-
     }
 }

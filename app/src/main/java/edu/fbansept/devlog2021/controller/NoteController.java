@@ -12,6 +12,7 @@ import org.json.JSONObject;
 import java.nio.charset.StandardCharsets;
 
 import edu.fbansept.devlog2021.R;
+import edu.fbansept.devlog2021.model.Note;
 import edu.fbansept.devlog2021.model.NoteTexte;
 import edu.fbansept.devlog2021.utils.RequestManager;
 import edu.fbansept.devlog2021.utils.StringRequestWithToken;
@@ -37,14 +38,16 @@ public final class NoteController {
         void onSave(String urlNote);
     }
 
-    public void save(Context context, NoteTexte note, Save saveListener) throws JSONException {
+    public void save(Context context, Note note, Save saveListener) throws JSONException {
+
+        String url = "user/" + (note instanceof NoteTexte ? "noteTexte" : "noteListe");
 
         JSONObject jsonBody = note.toJson();
 
         StringRequestWithToken request = new StringRequestWithToken(
                 context,
                 Request.Method.POST,
-                context.getResources().getString(R.string.url_spring) + "user/noteTexte",
+                context.getResources().getString(R.string.url_spring) + url,
                 urlNote -> {
                     saveListener.onSave(urlNote);
                 },

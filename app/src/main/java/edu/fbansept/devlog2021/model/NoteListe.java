@@ -24,6 +24,23 @@ public class NoteListe extends Note {
         }
     }
 
+    @Override
+    public JSONObject toJson() throws JSONException {
+        JSONObject jsonNote = new JSONObject();
+
+        jsonNote.put("id", this.getId());
+        jsonNote.put("titre", this.getTitre());
+
+        JSONArray listeTache = new JSONArray();
+        for (Tache tache : this.listeTache) {
+            listeTache.put(tache.toJson());
+        }
+
+        jsonNote.put("listeTache", listeTache);
+
+        return jsonNote;
+    }
+
     public List<Tache> getListeTache() {
         return listeTache;
     }
