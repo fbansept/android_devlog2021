@@ -7,15 +7,10 @@
     app:layout_anchor="@id/bottomAppBar"
     tools:context=".view.ListeNoteActivity">
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="edu.fbansept.devlog2021.view.fragment.HeaderFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="64dp"
         android:fillViewport="true">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -43,4 +38,10 @@
         app:layout_anchor="@id/bottomAppBar"
         app:maxImageSize="35dp"
         app:srcCompat="@drawable/ic_add_note" />
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="edu.fbansept.devlog2021.view.fragment.HeaderFragment"
+        android:layout_width="match_parent"
+        android:layout_height="64dp" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,19 +1,23 @@
 package edu.fbansept.devlog2021.controller;
 
 import android.content.Context;
+import android.net.Uri;
 import android.util.Log;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 import edu.fbansept.devlog2021.R;
 import edu.fbansept.devlog2021.model.Note;
 import edu.fbansept.devlog2021.model.NoteTexte;
+import edu.fbansept.devlog2021.utils.ImageUpload;
 import edu.fbansept.devlog2021.utils.RequestManager;
 import edu.fbansept.devlog2021.utils.StringRequestWithToken;
 import edu.fbansept.devlog2021.view.LoginActivity;
@@ -63,6 +67,24 @@ public final class NoteController {
 
         RequestManager.getInstance(context).addToRequestQueue(request);
 
+    }
+
+    public void ajoutImageNote(Context context, Uri uri) throws IOException {
+        ImageUpload imageUpload = new ImageUpload(
+                context,
+                uri,
+                context.getResources()
+                        .getString(R.string.url_spring) + "test/image-upload",
+                message -> {},
+                erreur -> erreur.printStackTrace()
+        );
+        imageUpload.setRetryPolicy(
+                new DefaultRetryPolicy(
+                        50000,
+                        0,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        RequestManager.getInstance(context).addToRequestQueue(imageUpload);
     }
 
 }

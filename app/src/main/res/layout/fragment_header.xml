@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#FFFFFF"
     tools:context=".view.fragment.HeaderFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -28,7 +29,7 @@
         app:cardCornerRadius="250dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageView_photoProfil"
             android:layout_width="32dp"
             android:layout_height="32dp"
             tools:src="@tools:sample/avatars" />
